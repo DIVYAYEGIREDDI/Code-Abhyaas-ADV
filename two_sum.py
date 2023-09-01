@@ -6,7 +6,8 @@
 
 #two sum
 s=5
-a=[0,1,2,3,4,5]
+a=[0,1,2,5,4,3,7,6]
+a.sort()
 i=0
 n=len(a)
 j=n-1
@@ -14,8 +15,8 @@ j=n-1
 while(i<j):
     s1=a[i]+a[j]
     if s1==s:
-        #res.append([i,j]) here we can use this also instead of print 
-        print([i,j])
+        res.append([a[i],a[j]]) 
+        #print([i,j]) this is for print indeces of two values
         i+=1
         j-=1
         
@@ -24,23 +25,11 @@ while(i<j):
       
     else:
         i+=1
-#for sum in res:
- #   print(sum)
-
-
-# In[ ]:
+for sum in res:
+    print(sum)
 
 
 
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
 
 
 
