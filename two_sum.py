@@ -17,6 +17,11 @@ while(i<j):
     if s1==s:
         res.append([a[i],a[j]]) 
         #print([i,j]) this is for print indeces of two values
+         # Move i and j to avoid duplicates
+         while(i<j and a[i]==a[i+1]):
+            i+=1
+        while(i<j and a[j]==a[j-1]):
+            j-=1
         i+=1
         j-=1
         
