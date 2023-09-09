@@ -1,36 +1,34 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[11]:
-
-
-#majority element (ele>=n/3)
-a=[1,1,2,2,3,3,1,1,2,2]
-count=0
+#find the majority element repeated in n/3 times
+a=[1,1,2,3,4,1,2,2,1,2]
+ele1,ele2=None,None
+count1,count2=0,0
 n=len(a)
-ele=None
 for i in range(n):
-    if count==0:
-        ele=a[i]
-    if a[i]==ele:
-        count+=1
+    if count1==0 and ele2!=a[i]:
+        count1=1
+        ele1=a[i]
+    if count2==0 and ele1!=a[i]:
+        count2=1
+        ele2=a[i]
+    elif a[i]==ele1:
+        count1+=1
+    elif a[i]==ele2:
+        count2+=1
     else:
-        count-=1
-    i+=1
-count = 0
+        count1-=1
+        count2-=1
+major1,major2=0,0
 for i in range(n):
-    if a[i] == ele:
-        count += 1
+    if a[i]==ele1:
+         major1+=1
+    if a[i]==ele2:
+         major2+=1
+ls=[]
+if major1>=n//3:
+    ls.append(ele1)
+if major2>=n//3:
+    ls.append(ele2)
+print(ls)    
+    
 
-# Check if the candidate appears more than or equal to n/3 times
-if count >= n // 3:
-    print(ele)
-else:
-    print("No majority element found.")
-
-
-# In[ ]:
-
-
-
-
+    
