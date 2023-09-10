@@ -7,7 +7,7 @@ for i in range(n):
     if count1==0 and ele2!=a[i]:
         count1=1
         ele1=a[i]
-    if count2==0 and ele1!=a[i]:
+    elif count2==0 and ele1!=a[i]:
         count2=1
         ele2=a[i]
     elif a[i]==ele1:
